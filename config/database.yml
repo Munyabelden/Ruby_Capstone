@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encode: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  database: ecommerce
+  username: postgres
+  password: 2000
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: db/development.sqlite3
+
+test:
+  <<: *default
+  database: ecommerce_test
+
+production:
+  <<: *default
+  database:  ecommerce_production
