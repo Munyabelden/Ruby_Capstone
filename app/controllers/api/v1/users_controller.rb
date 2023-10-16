@@ -4,8 +4,4 @@ class Api::V1::UsersController < ApplicationController
 
     render json: @users
   end
-
-  def create
-    @users = User.new(user_params)
-    
 end
